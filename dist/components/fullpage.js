@@ -157,7 +157,7 @@ var Fullpage = function (_React$Component) {
     value: function onTouchEnd(e) {
       var touchEnd = e.changedTouches[0].clientY;
 
-      if (this.state.touchStart > touchEnd + Math.abs(this.state.touchSensitivity)) {
+      if (Math.abs(this.state.touchStart - touchEnd) < this.state.touchSensitivity || this.state.touchStart > touchEnd + Math.abs(this.state.touchSensitivity)) {
 
         if (this.state.activeSlide == this.state.slidesCount - 1) {
           // prevent down going down
