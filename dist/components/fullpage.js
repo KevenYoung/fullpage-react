@@ -104,14 +104,14 @@ var Fullpage = function (_React$Component) {
     key: 'onResize',
     value: function onResize() {
       var slides = [];
-
+      var height = window.innerHeight + 80;
       for (var i = 0; i < this.state.slidesCount; i++) {
-        slides.push(window.innerHeight * i);
+        slides.push(height * i);
       }
 
       this.setState({
         'slides': slides,
-        'height': window.innerHeight
+        'height': height
       });
 
       this.scrollToSlide(this.state.activeSlide, true);
