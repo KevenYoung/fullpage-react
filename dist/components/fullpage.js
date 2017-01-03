@@ -161,6 +161,9 @@ var Fullpage = function (_React$Component) {
 
         if (this.state.activeSlide == this.state.slidesCount - 1) {
           // prevent down going down
+          if (this.props.onScrollEnd) {
+            this.props.onScrollEnd();
+          }
           return true;
         }
 
@@ -245,7 +248,8 @@ Fullpage.propTypes = {
   children: React.PropTypes.node.isRequired,
   threshold: React.PropTypes.number,
   sensitivity: React.PropTypes.number,
-  active: React.PropTypes.func
+  active: React.PropTypes.func,
+  onScrollEnd: React.PropTypes.func
 };
 
 function getSlideCount(children) {
