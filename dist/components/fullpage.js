@@ -150,7 +150,7 @@ var Fullpage = function (_React$Component) {
     key: 'onTouchStart',
     value: function onTouchStart(e) {
       this.setState({ 'touchStart': e.touches[0].clientY });
-      e.preventDefault();
+      // e.preventDefault();
     }
   }, {
     key: 'onTouchEnd',
