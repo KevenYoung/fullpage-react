@@ -104,14 +104,14 @@ var Fullpage = function (_React$Component) {
     key: 'onResize',
     value: function onResize() {
       var slides = [];
-      var height = window.innerHeight + 80;
+
       for (var i = 0; i < this.state.slidesCount; i++) {
-        slides.push(height * i);
+        slides.push(window.innerHeight * i);
       }
 
       this.setState({
         'slides': slides,
-        'height': height
+        'height': window.innerHeight
       });
 
       this.scrollToSlide(this.state.activeSlide, true);
@@ -150,7 +150,7 @@ var Fullpage = function (_React$Component) {
     key: 'onTouchStart',
     value: function onTouchStart(e) {
       this.setState({ 'touchStart': e.touches[0].clientY });
-      // e.preventDefault();
+      e.preventDefault();
     }
   }, {
     key: 'onTouchEnd',
